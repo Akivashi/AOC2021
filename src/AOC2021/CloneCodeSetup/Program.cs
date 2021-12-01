@@ -1,4 +1,8 @@
-﻿namespace CleanCodeSetup
+﻿using System;
+using System.IO;
+using System.Linq;
+
+namespace CloneCodeSetup
 {
     public class Program
     {

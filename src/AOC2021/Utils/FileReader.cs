@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
 
 namespace Utils
 {
@@ -32,7 +36,7 @@ namespace Utils
 
                 var item = JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(obj));
 
-                if(item != null) { 
+                if(item != null) {
                     listOfObjects.Add(item);
                 }
                 else
