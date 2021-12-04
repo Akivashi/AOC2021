@@ -51,7 +51,7 @@ namespace Utils
             return listOfObjects;
         }
 
-        private static string GetCurrentPath()
+        public static string GetCurrentPath()
         {
             return Directory.GetCurrentDirectory() + "\\";
         }
