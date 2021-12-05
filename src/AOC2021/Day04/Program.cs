@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 using Utils;
 
 namespace Day04
@@ -11,10 +10,10 @@ namespace Day04
     {
         public static void Main(string[] args)
         {
-            // if (args.Length <= 1 || args[1] == "1")
-            // {
-            //     Console.WriteLine(Assignment1());
-            // }
+            if (args.Length <= 1 || args[1] == "1")
+            {
+                Console.WriteLine(Assignment1());
+            }
             if (args.Length <= 1 || args[1] == "2")
             {
                 Console.WriteLine(Assignment2());
@@ -24,7 +23,7 @@ namespace Day04
         public static int Assignment1()
         {
             var day04_1Input = ReadInput("input1.txt");
-            List<Day04_1BingoCard> winningBingoCard = null;
+            List<Day04_1BingoCard> winningBingoCard = new ();
             int lastNumberDrawn = 0;
             foreach (var numberDraw in day04_1Input.NumberDraws)
             {
@@ -112,7 +111,7 @@ namespace Day04
             return lastNumberDrawn * winningBingoCards[0].BingoNumbers.Sum(r => r.Sum(n => n.IsMarked ? 0 : n.Number));
         }
 
-        public static Day04_1Object ReadInput(string fileName)
+        private static Day04_1Object ReadInput(string fileName)
         {
             var file = new StreamReader(FileReader.GetCurrentPath() + fileName);
             var lineCount = 0;
